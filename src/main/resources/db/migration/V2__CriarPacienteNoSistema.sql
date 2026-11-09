@@ -1,0 +1,20 @@
+CREATE TABLE PACIENTE(
+
+    ID_PACIENTE  BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+
+    nome VARCHAR(50) NOT NULL,
+    sobrenome VARCHAR(50) NOT NULL,
+    cpf VARCHAR(20) NOT NULL Unique,
+    telefone VARCHAR(20) NOT NULL unique,
+
+    ID_USUARIO BIGINT,
+
+ CONSTRAINT unique_nome_sobrenome UNIQUE (nome,sobrenome),
+     CONSTRAINT fk_usuario FOREIGN KEY (ID_USUARIO) REFERENCES USUARIO(ID_USUARIO)
+
+);
+
+
+
+
+
